@@ -1,0 +1,43 @@
+
+<br />  <br />
+<div class="container">
+  <h1>Dependancy Injection</h1>
+ <div *ngIf="!temp"><button (click)="getdetails()">Click here to get details</button> </div> 
+  <br /> 
+  <table>
+    <tr>
+    <th>
+    Index    
+    </th>
+      <th>
+       Name
+      </th>
+      <th>
+         Id
+      </th>
+    </tr>
+    <tr *ngFor="let data of details;let i = index; let even = even; let odd = odd;
+                let first = first; let last = last"
+    [ngClass]="{ first: first, last: last,odd: odd, even: even }" >
+      <td>
+        {{i+1}}
+      </td>
+      <td>
+        {{data.name}}
+      </td>
+      <td>
+        {{data.Id}}
+      </td>
+    </tr>
+  </table>
+  <br/> 
+  <div *ngIf='temp'>
+<p class ='about'>Details about above table :</p>
+    <ul class='list' >
+        <li>First row is red from 'first' variable of ngFor</li>
+        <li>Odd rows is white from 'odd' variable of ngFor</li>
+        <li>Even rows is black from 'even' variable of ngFor</li>
+        <li>Last row is green from 'last' variable of ngFor</li>
+      </ul>
+    </div>
+</div>
