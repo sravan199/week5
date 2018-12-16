@@ -1,0 +1,100 @@
+microservices :It  is an architectural style that structures an application as a collection of services that are
+
+	Highly maintainable and testable
+	Loosely coupled
+	Independently deployable
+	Organized around business capabilities.
+
+The microservice architecture enables the continuous delivery/deployment of large, complex applications. It also enables an organization to evolve its 
+technology stack.
+
+This solution has a number of benefits:
+
+	Enables the continuous delivery and deployment of large, complex applications.
+
+	Better testability - services are smaller and faster to test
+
+	Better deployability - services can be deployed independently
+
+	It enables you to organize the development effort around multiple, auto teams. It enables you to organize the development effort around multiple teams. 
+
+	Each team is owns and is responsible for one or more single service. Each team can develop, deploy and scale their services independently of all of the
+	 other teams.
+
+	Each microservice is relatively small
+
+	Easier for a developer to understand
+
+	The IDE is faster making developers more productive
+
+	The application starts faster, which makes developers more productive, and speeds up deployments
+
+	Improved fault isolation.If there is a memory leak in one service then only that service will be affected. The other services will continue to handle requests. 
+	In comparison, one misbehaving component of a monolithic architecture can bring down the entire system.
+
+Drawbacks :
+
+	This solution has a number of drawbacks:
+
+	Developers must deal with the additional complexity of creating a distributed system.
+
+	Developer tools/IDEs are oriented on building monolithic applications and don’t provide explicit support for developing distributed applications.
+
+	Testing is more difficult
+
+	Developers must implement the inter-service communication mechanism.
+
+	Implementing use cases that span multiple services without using distributed transactions is difficult
+
+	Implementing use cases that span multiple services requires careful coordination between the teams
+
+	Deployment complexity. 
+
+Increased memory consumption.
+
+Issues :
+
+One challenge with using this approach is deciding when it makes sense to use it. When developing the first version of an application, you often do not have
+ the problems that this approach solves. Moreover, using an elaborate, distributed architecture will slow down development. This can be a major problem for 
+startups whose biggest challenge is often how to rapidly evolve the business model and accompanying application. Using Y-axis splits might make it much more
+ difficult to iterate rapidly. Later on, however, when the challenge is how to scale and you need to use functional decomposition, the tangled dependencies might 
+make it difficult to decompose your monolithic application into a set of services.
+
+
+ Monolithic :
+
+Simple to develop - the goal of current development tools and IDEs is to support the development of monolithic applications
+Simple to deploy - you simply need to deploy the WAR file (or directory hierarchy) on the appropriate runtime
+Simple to scale - you can scale the application by running multiple copies of the application behind a load balancer
+
+When application grows large and the team grows in size, this approach has a number of drawbacks that become increasingly significant:
+
+The application can be difficult to understand and modify.As a result, development typically slows down. Also, because there are not hard module boundaries,
+ modularity breaks down over time. Moreover, because it can be difficult to understand how to correctly implement a change the quality of the code declines 
+over time. It’s a downwards spiral.
+
+The large monolithic code base intimidates developers, especially ones who are new to the team. 
+
+Overloaded IDE - the larger the code base the slower the IDE and the less productive developers are.
+
+Overloaded web container - the larger the application the longer it takes to start up. This had have a huge impact on developer productivity because of time
+		    wasted waiting for the container to start. It also impacts deployment too.
+
+Continuous deployment is difficult -
+			 a large monolithic application is also an obstacle to frequent deployments. In order to update one component you have to
+ redeploy the entire application. This will interrupt background tasks (e.g. Quartz jobs in a Java application), regardless of whether they are impacted by the
+ change, and possibly cause problems. There is also the chance that components that haven’t been updated will fail to start correctly. As a result, the risk 
+associated with redeployment increases, which discourages frequent updates. This is especially a problem for user interface developers, since they usually need 
+to iterative rapidly and redeploy frequently.
+
+Scaling the application can be difficult - 
+			a monolithic architecture is that it can only scale in one dimension. With a monolithic architecture we cannot scale each 
+component independently.On the one hand, it can scale with an increasing transaction volume by running more copies of the application.  But on the other
+ hand, this architecture can’t scale with an increasing data volume. Each copy of application instance will access all of the data, which makes caching less
+ effective and increases memory consumption and I/O traffic. 
+
+
+Requires a long-term commitment to a technology stack - With a monolithic application, can be difficult to incrementally adopt a newer technology.
+
+
+
